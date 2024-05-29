@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./src/public/assets/images/logo.png" alt="Burger's park Logo">
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                  <a href="#">Inicio</a>
+                </li>
+                <li>
+                  <a href="#">Burgers</a>
+                </li>
+                <li>
+                  <a href="#">Acompanhamentos</a>
+                </li>
+                <li>
+                    <a href="#" id="cart-icon">
+                        Sacola
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="offer">
+        <div class="offer-text">
+            <h1>Delicie-se com a Perfeição</h1>
+            <h2>Nossa Seleção de Hambúrgueres</h2>
+            <p>Feitos com os melhores ingredientes, nossos hambúrgueres oferecem uma experiência de dar água na boca que você não vai esquecer.</p>
+            <button>Peça agora</button>
+        </div>
+        <div class="offer-image">
+            <div class="offer-card">
+                <h2>Imagem</h2>
+                <p>oferta</p>
+                <img src="" alt="Burger Offer">
+            </div>
+        </div>
+    </section>
+
+    <section class="burger-menu">
+        <h2>Burger Menu</h2>
+        <p>Ingredientes em destaque</p>
+        <div class="menu-items">
+            <div class="menu-item" data-name="Cheese Bacon" data-price="27">
+                <img src="./src/public/assets/images/Bacon.png" alt="Cheese Bacon">
+                <div class="menu-item-info">
+                    <h3>Cheese Bacon</h3>
+                    <p>R$ 27</p>
+                    <button class="cart-button"></button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Cheese Burger" data-price="27">
+                <img src="./src/public/assets/images/Burger.png" alt="Cheese Burger">
+                <div class="menu-item-info">
+                    <h3>Cheese Burger</h3>
+                    <p>R$ 27</p>
+                    <button class="cart-button"></button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Cheese Burger Duplo" data-price="27">
+                <img src="./src/public/assets/images/Duplo.png" alt="Cheese Burger Duplo">
+                <div class="menu-item-info">
+                    <h3>Cheese Burger Duplo</h3>
+                    <p>R$ 27</p>
+                    <button class="cart-button"></button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Cheese Egg" data-price="27">
+                <img src="./src/public/assets/images/Egg.png" alt="Cheese Egg">
+                <div class="menu-item-info">
+                    <h3>Cheese Egg</h3>
+                    <p>R$ 27</p>
+                    <button class="cart-button"></button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Cheese Salada" data-price="27">
+                <img src="./src/public/assets/images/Salada.png" alt="Cheese Salada">
+                <div class="menu-item-info">
+                    <h3>Cheese Salada</h3>
+                    <p>R$ 27</p>
+                    <button class="cart-button"></button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Chesse Burger Triplo" data-price="27">
+                <img src="./src/public/assets/images/Triplo.png" alt="Chesse Burger Triplo">
+                <div class="menu-item-info">
+                    <h3>Chesse Burger Triplo</h3>
+                    <p>$R$ 27</p>
+                    <button class="cart-button"></button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="X-Tudo" data-price="27">
+                <img src="./src/public/assets/images/X-Tudo.png" alt="X-Tudo">
+                <div class="menu-item-info">
+                    <h3>X-Tudo</h3>
+                    <p>R$ 27</p>
+                    <button class="cart-button"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="hot-deals">
+        <h2>Ofertas Especiais</h2>
+        <div class="special-combo">
+            <img src="" alt="Special Combo">
+            <div class="combo-text">
+                <h3>COMBO ESPECIAL</h3>
+                <span>Burger & Fritas</span>
+                <p>Garanta o melhor do nosso menu em um combo especial que inclui o nosso hamburguer mais vendido e nossas deliciosas fritas</p>
+                <button>Pedir Agora</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-try">
+        <h2>Por que eu deveria provar?</h2>
+        <p>Porque nossos hambúrgueres são feitos com paixão e os melhores ingredientes para entregar um sabor inesquecível.</p>
+    </section>
+
+    <div id="cart" class="cart-hidden">
+        <h2>Sua sacola</h2>
+        <div id="cart-items"></div>
+        <button id="close-cart">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
