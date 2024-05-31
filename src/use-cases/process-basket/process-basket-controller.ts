@@ -15,13 +15,19 @@ class ProcessBasketController {
 
     const agent = new WebhookClient({ request, response })
 
+    const itemsContext = body.queryResult.outputContexts[1]
+    const basketContext = body.queryResult.outputContexts[0]
+
     try {
-      // TODO: possivelmente trocar para um mapa de intents
       if (body.queryResult.intent.displayName === 'order.finish') {
-        this.processBasektCase.finish(agent)
+        this.processBasektCase.finish(agent, basketContext)
       }
 
-      this.processBasektCase.execute(body, agent)
+      if (body.queryResult.intent.displayName === 'order.showbasket'
+        || body.queryResult.intent.displayName === 'item.confirm.yes'
+      ) {
+        this.processBasektCase.execute(body, agent, itemsContext, basketContext)
+      }
     } catch (error) {
       return response.status(500).send('Internal server error')
     }

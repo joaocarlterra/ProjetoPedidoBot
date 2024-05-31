@@ -1,5 +1,3 @@
-import { WebhookClient } from "dialogflow-fulfillment"
-import { response } from "express"
 import generateBasketOutput from "src/helpers/generate-basket-output"
 import { clients } from "src/index"
 import { WebSocket } from "ws"
@@ -7,19 +5,27 @@ import { WebSocket } from "ws"
 class ProcessBasketCase {
   constructor() {}
 
-  async execute(data: any, agent: any) {
+  async execute(data: any, agent: any, itemsContext: any, basketContext: any) {
+    const getItems = () => {
+      return itemsContext
+    }
+
+    const getBasket = () => {
+      return basketContext
+    }
+
     const getBasketItems = (agent: any) => {
-      const basket = agent.context.get('basket')
+      const basket = agent.context.get('basket') || getBasket()
 
       if ((basket.parameters as any)?.items) {
         return (basket.parameters as any).items
       } else {
-        return agent.context.get('item').parameters
+        return agent.context.get('item')?.parameters || getItems().parameters
       }
     }
 
     const showBasket = () => {
-      if (agent.context.get('basket')) {
+      if (agent.context.get('basket') || getBasket()) {
         const basketItems = getBasketItems(agent)
         const itemKeys = Object.keys(basketItems).filter(key => !key.includes('.original'))
 
@@ -38,15 +44,14 @@ class ProcessBasketCase {
     }
 
     const confirmItem = () => {
-      const item = agent.context.get('item')
+      const item = agent.context.get('item') || getItems()
 
-      // TODO: refatorar a forma de pegar os parametros
-      const burgerType = item.parameters['burger-type' as keyof typeof item.parameters]
-      const burgerAmount = item.parameters['burger-amount' as keyof typeof item.parameters]
-      const sideDishes = item.parameters['side-dishes' as keyof typeof item.parameters]
-      const sideDishesAmount = item.parameters['side-dishes-amount' as keyof typeof item.parameters]
-      const drinks = item.parameters['drinks' as keyof typeof item.parameters]
-      const drinksAmount = item.parameters['drinks-amount' as keyof typeof item.parameters]
+      const burgerType = item?.parameters['burger-type' as keyof typeof item.parameters]
+      const burgerAmount = item?.parameters['burger-amount' as keyof typeof item.parameters]
+      const sideDishes = item?.parameters['side-dishes' as keyof typeof item.parameters]
+      const sideDishesAmount = item?.parameters['side-dishes-amount' as keyof typeof item.parameters]
+      const drinks = item?.parameters['drinks' as keyof typeof item.parameters]
+      const drinksAmount = item?.parameters['drinks-amount' as keyof typeof item.parameters]
 
       const basketContext = {
         'name': 'basket',
@@ -56,7 +61,7 @@ class ProcessBasketCase {
 
       var items: any = {}
 
-      if (agent.context.get('basket').parameters) {
+      if (agent.context.get('basket')?.parameters) {
         items = (agent.context.get('basket').parameters as any)?.items
       }
 
@@ -86,9 +91,9 @@ class ProcessBasketCase {
     }
   }
 
-  async finish(agent: any) {
+  async finish(agent: any, basketContext: any) {
     const orderFinish = () => {
-      const basket = agent.context.get('basket')?.parameters
+      const basket = agent.context.get('basket')?.parameters || basketContext?.parameters
 
       if (!basket) {
         agent.add('Desculpe, não encontrei itens no seu carrinho.');
