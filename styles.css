@@ -7,17 +7,34 @@ body {
   overflow-x: hidden;
 }
 
+.banner {
+  background: #FFF7E6;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: -10vw;
+  right: -10vw;
+  width: 50vw;
+  height: 50vw;
+  background-color: #F5A401;
+  border-radius: 50%;
+  z-index: 0;
+}
+
 header {
+  position: relative;
   display: flex;
-  background-color: #f0f0f0;
   color: #353535;
   padding: 10px 0;
 
-  height: 120px;
+  height: 200px;
 
   align-items: center;
   justify-content: center;
   gap: 48px;
+  z-index: 99;
 }
 
 #cart-icon {
@@ -26,7 +43,7 @@ header {
 }
 
 #cart-count {
-  background: red;
+  background: #FE2626;
   border-radius: 50%;
   color: white;
   font-size: 0.8em;
@@ -38,7 +55,7 @@ header {
 
 #cart {
   position: fixed;
-  top: 50px;
+  top: 70px;
   right: 0;
   width: 300px;
   background: #f9f9f9;
@@ -107,13 +124,13 @@ header {
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 
 .logo img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -135,13 +152,16 @@ header nav ul li {
 header nav ul li a {
   color: #353535;
   text-decoration: none;
+
+  font-weight: 700;
 }
 
 .offer {
   display: flex;
-  justify-content: space-between;
-  padding: 50px 20rem;
-  background-color: #f0f0f0;
+  padding: 100px 20rem 200px 20rem;
+
+  position: relative;
+  z-index: 99;
 }
 
 .offer-text {
@@ -172,16 +192,18 @@ header nav ul li a {
   font-weight: 700;
 
   border: none;
-  background: #666;
+  background: #F5A401;
   color: #f9f9f9;
   border-radius: 50px;
 
   padding: 16px 32px;
   margin-top: 1rem;
+  opacity: 1;
+  transition: 0.5s ease;
 }
 
 .offer-text button:hover {
-  background: #555;
+  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -189,68 +211,105 @@ header nav ul li a {
   display: flex;
 }
 
-.offer ::before {
-  content: '';
-  position: absolute;
-  top: -130px;
-  right: -170px;
-  width: 800px;
-  height: 800px;
-  background-color: #666;
-  border-radius: 50%;
-  z-index: 0;
-}
-
 .offer-card {
   position: absolute;
-  background-color: #666;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  border-radius: 10px;
+}
 
-  overflow: hidden;
-  z-index: 99;
+.offer-card-text {
+  position: absolute;
+
+  top: -10vw;
+  right: -40vw;
+}
+
+.offer-card-text h2 {
+  margin: 0;
+
+  font-size: 10rem;
+  font-weight: 700;
+  color: #f9f9f9;
+}
+
+.offer-card-text p {
+  margin: 0;
+
+  font-size: 3.5rem;
+  color: #f9f9f9;
+
+  text-align: right;
+}
+
+.offer-card img {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  top: -7vw;
+  right: -35vw;
+
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.4))
 }
 
 .burger-menu {
   text-align: center;
   padding: 50px 20rem;
 
-  margin-top: 3rem;
+  background: #FFF7E6;
 }
 
 .burger-menu h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #353535;
+
   margin: 0;
+}
+
+.burger-menu p {
+  font-size: 1.2em;
+  color: #656565;
 }
 
 .menu-items {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
   justify-content: center;
-  flex-wrap: wrap;
 
   margin-top: 4rem;
+
+  position: relative;
+  z-index: 99;
 }
 
 .menu-item {
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #FFF3E1;
   margin: 10px;
   padding: 20px;
   border-radius: 10px;
-  max-width: 300px;
+  max-width: 240px;
   width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  opacity: 1;
+
+  transition: .5s ease;
 }
 
 .menu-item:hover {
-  background-color: #f9f9f9;
-  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .burger-menu .menu-item img {
-  width: 100%;
+  width: 150px;
+  height: 150px;
   border-radius: 10px 10px 0 0;
 }
 
@@ -268,22 +327,38 @@ header nav ul li a {
   color: #777;
 }
 
-.burger-menu .cart-button {
-  background: url('cart-icon.png') no-repeat center center;
-  background-size: contain;
+.cart-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 700;
+
   border: none;
-  width: 30px;
-  height: 30px;
+  background: #FE2626;
+  color: #f9f9f9;
+  border-radius: 50px;
+
+  padding: 16px 32px;
+  margin-top: 1rem;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.cart-button:hover {
+  opacity: 0.8;
   cursor: pointer;
 }
 
 .hot-deals {
-  background-color: #f9f9f9;
+  background-color: #FFF7E6;
   padding: 50px 20rem;
   text-align: center;
 }
 
 .hot-deals h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #353535;
+
   margin-bottom: 4rem;
 }
 
@@ -293,12 +368,15 @@ header nav ul li a {
   align-items: center;
 
   gap: 10rem;
+  margin-bottom: 5rem;
 }
 
 .special-combo img {
-  width: 150px;
-  height: 150px;
+  object-fit: cover;
+  width: 500px;
+  height: 300px;
   margin-right: 20px;
+  border-radius: 20px;
 }
 
 .combo-text {
@@ -338,7 +416,7 @@ header nav ul li a {
   font-weight: 700;
 
   border: none;
-  background: #666;
+  background: #FE2626;
   color: #f9f9f9;
   border-radius: 50px;
 
