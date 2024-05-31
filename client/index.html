@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <header>
+            <div class="logo">
+                <img src="./src/public/assets/images/logopark.png" alt="Burger's park Logo">
+            </div>
+    
+            <nav>
+                <ul>
+                    <li>
+                      <a href="#">Inicio</a>
+                    </li>
+                    <li>
+                      <a href="#">Burgers</a>
+                    </li>
+                    <li>
+                      <a href="#">Acompanhamentos</a>
+                    </li>
+                    <li>
+                        <a href="#" id="cart-icon">
+                            Sacola
+                            <span id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="offer">
+            <div class="offer-text">
+                <h1>Delicie-se com a Perfeição</h1>
+                <h2>Nossa Seleção de Hambúrgueres</h2>
+                <p>Feitos com os melhores ingredientes, nossos hambúrgueres oferecem uma experiência de dar água na boca que você não vai esquecer.</p>
+                <button>Peça agora</button>
+            </div>
+    
+            <div class="offer-image">
+                <div class="offer-card">
+                    <div class="offer-card-text">
+                        <h2>COMBO</h2>
+                        <p>oferta</p>
+                    </div>
+                    
+                    <img src="./src/public/assets/images/offer.png" alt="Burger Offer">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="burger-menu">
+        <h2>Menu de burgers</h2>
+        <p>Ingredientes em destaque</p>
+        <div class="menu-items">
+            <div class="menu-item" data-name="Cheddar Bacon Barbecue" data-price="11.99">
+                <img src="./src/public/assets/images/Bacon.png" alt="Cheddar Bacon Barbecue">
+                <div class="menu-item-info">
+                    <h3>Cheddar Bacon Barbecue</h3>
+                    <p>R$ 11,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Cheddar Burger" data-price="8.99">
+                <img src="./src/public/assets/images/Burger.png" alt="Cheddar Burger">
+                <div class="menu-item-info">
+                    <h3>Cheddar Burger</h3>
+                    <p>R$ 8,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Duplo Cheddar Burger" data-price="13.99">
+                <img src="./src/public/assets/images/Duplo.png" alt="Duplo Cheddar Burger">
+                <div class="menu-item-info">
+                    <h3>Duplo Cheddar Burger</h3>
+                    <p>R$ 13,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Cheddar Egg" data-price="9.99">
+                <img src="./src/public/assets/images/Egg.png" alt="Cheddar Egg">
+                <div class="menu-item-info">
+                    <h3>Cheddar Egg</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Cheddar Salada" data-price="9.99">
+                <img src="./src/public/assets/images/Salada.png" alt="Cheddar Salada">
+                <div class="menu-item-info">
+                    <h3>Cheddar Salada</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Triplo Cheddar Burger" data-price="16.99">
+                <img src="./src/public/assets/images/Triplo.png" alt="Triplo Cheddar Burger">
+                <div class="menu-item-info">
+                    <h3>Triplo Cheddar Burger</h3>
+                    <p>R$ 16,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="X-Tudo" data-price="13.99">
+                <img src="./src/public/assets/images/X-Tudo.png" alt="X-Tudo">
+                <div class="menu-item-info">
+                    <h3>X-Tudo</h3>
+                    <p>R$ 13,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="burger-menu">
+        <h2>Menu de acompanhamentos</h2>
+        <p>Ingredientes em destaque</p>
+        <div class="menu-items">
+            <div class="menu-item" data-name="Batata Individual" data-price="9.99">
+                <img src="./src/public/assets/images/Batata-p.png" alt="Batata Individual">
+                <div class="menu-item-info">
+                    <h3>Batata Individual</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Batata Média" data-price="16.99">
+                <img src="./src/public/assets/images/Batata-m.png" alt="Batata Média">
+                <div class="menu-item-info">
+                    <h3>Batata Média</h3>
+                    <p>R$ 16,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Batata Grande" data-price="13.99">
+                <img src="./src/public/assets/images/Batata-g.png" alt="Batata Grande">
+                <div class="menu-item-info">
+                    <h3>Batata Grande</h3>
+                    <p>R$ 26,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Onion Ring Individual" data-price="15.99">
+                <img src="./src/public/assets/images/onion-p.png" alt="Onion Ring Individual">
+                <div class="menu-item-info">
+                    <h3>Onion Ring Individual</h3>
+                    <p>R$ 15,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Onion Ring Média" data-price="26.99">
+                <img src="./src/public/assets/images/onion-m.png" alt="Onion Ring Média">
+                <div class="menu-item-info">
+                    <h3>Onion Ring Média</h3>
+                    <p>R$ 26,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Onion Ring Grande" data-price="43.99">
+                <img src="./src/public/assets/images/onion-g.png" alt="Onion Ring Grande">
+                <div class="menu-item-info">
+                    <h3>Onion Ring Grande</h3>
+                    <p>R$ 43,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Nuggets Individual" data-price="15.99">
+                <img src="./src/public/assets/images/Nuggets-p.png" alt="Nuggets Individual">
+                <div class="menu-item-info">
+                    <h3>Nuggets Individual</h3>
+                    <p>R$ 15,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Nuggets Média" data-price="26.99">
+                <img src="./src/public/assets/images/Nuggets-m.png" alt="Nuggets Média">
+                <div class="menu-item-info">
+                    <h3>Nuggets Média</h3>
+                    <p>R$ 26,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Nuggets Grande" data-price="43.99">
+                <img src="./src/public/assets/images/Nuggets-g.png" alt="Nuggets Grande">
+                <div class="menu-item-info">
+                    <h3>Nuggets Grande</h3>
+                    <p>R$ 43,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="burger-menu">
+        <h2>Menu de bebidas</h2>
+        <div class="menu-items">
+            <div class="menu-item" data-name="Coca Cola" data-price="9.99">
+                <img src="./src/public/assets/images/coca-removebg-preview.png" alt="Coca cola">
+                <div class="menu-item-info">
+                    <h3>Coca cola</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Pepsi" data-price="9.99">
+                <img src="./src/public/assets/images/pepsi-removebg-preview.png" alt="Pepsi">
+                <div class="menu-item-info">
+                    <h3>Pepsi</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Guarana" data-price="9.99">
+                <img src="./src/public/assets/images/guarana-removebg-preview.png" alt="Guarana">
+                <div class="menu-item-info">
+                    <h3>Guarana</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Itubaina" data-price="9.99">
+                <img src="./src/public/assets/images/Itubaina-removebg-preview.png" alt="Itubaina">
+                <div class="menu-item-info">
+                    <h3>Itubaina</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Heineken" data-price="9.99">
+                <img src="./src/public/assets/images/heineken-removebg-preview.png" alt="Heineken">
+                <div class="menu-item-info">
+                    <h3>Heineken</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Brahma" data-price="9.99">
+                <img src="./src/public/assets/images/brahma-removebg-preview.png" alt="Brahma">
+                <div class="menu-item-info">
+                    <h3>Brahma</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Amstel" data-price="9.99">
+                <img src="./src/public/assets/images/amstel-removebg-preview.png" alt="Amstel">
+                <div class="menu-item-info">
+                    <h3>Amstel</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Corona" data-price="9.99">
+                <img src="./src/public/assets/images/corona-removebg-preview.png" alt="Corona">
+                <div class="menu-item-info">
+                    <h3>Corona</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Monster" data-price="9.99">
+                <img src="./src/public/assets/images/monster-removebg-preview.png" alt="Monster">
+                <div class="menu-item-info">
+                    <h3>Monster</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Red Bull" data-price="9.99">
+                <img src="./src/public/assets/images/redbull-removebg-preview.png" alt="Red Bull">
+                <div class="menu-item-info">
+                    <h3>Red Bull</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="TNT" data-price="9.99">
+                <img src="./src/public/assets/images/tnt-removebg-preview.png" alt="TNT">
+                <div class="menu-item-info">
+                    <h3>TNT</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+            <div class="menu-item" data-name="Tônica" data-price="9.99">
+                <img src="./src/public/assets/images/tonica-removebg-preview.png" alt="Tônica">
+                <div class="menu-item-info">
+                    <h3>Tônica</h3>
+                    <p>R$ 9,99</p>
+                    <button class="cart-button">Pedir</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="hot-deals">
+        <h2>Ofertas Especiais</h2>
+        <div class="special-combo">
+            <img src="./src/public/assets/images/Combo-sextou.png" alt="combo sextou">
+            <div class="combo-text">
+                <h3>COMBO SEXTOU</h3>
+                <span>Burger & Fritas</span>
+                <p>Garanta o melhor do nosso menu em um combo especial que inclui o nosso hamburguer mais vendido e nossas deliciosas fritas</p>
+                <button>Pedir Agora</button>
+            </div>
+        </div>
+
+        <div class="special-combo">
+            <div class="combo-text">
+                <h3>COMBO QUINTOU</h3>
+                <span>Burger & Fritas</span>
+                <p>Garanta o melhor do nosso menu em um combo especial que inclui o nosso hamburguer mais vendido e nossas deliciosas fritas</p>
+                <button>Pedir Agora</button>
+            </div>
+            <img src="./src/public/assets/images/Combo-quintou.png" alt="combo quintou">
+        </div>
+
+        <div class="special-combo">
+            <img src="./src/public/assets/images/Combo-domingou.png" alt="combo domingou">
+            <div class="combo-text">
+                <h3>COMBO DOMINGOU</h3>
+                <span>Burger & Fritas</span>
+                <p>Garanta o melhor do nosso menu em um combo especial que inclui o nosso hamburguer mais vendido e nossas deliciosas fritas</p>
+                <button>Pedir Agora</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-try">
+        <h2>Por que eu deveria provar?</h2>
+        <p>Porque nossos hambúrgueres são feitos com paixão e os melhores ingredientes para entregar um sabor inesquecível.</p>
+    </section>
+
+    <div id="cart" class="cart-hidden">
+        <h2>Sua sacola</h2>
+        <div id="cart-items"></div>
+        <button id="close-cart">Close</button>
+    </div>
+
+    <script type="text/javascript"
+        id="botcopy-embedder-d7lcfheammjct"
+        class="botcopy-embedder-d7lcfheammjct" 
+        data-botId="6657dbc57b01d400085c4a23"
+    >
+        var s = document.createElement('script'); 
+        s.type = 'text/javascript'; s.async = true; 
+        s.src = 'https://widget.botcopy.com/js/injection.js'; 
+        document.getElementById('botcopy-embedder-d7lcfheammjct').appendChild(s);
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
