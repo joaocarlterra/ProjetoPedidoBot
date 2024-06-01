@@ -1,1 +1,1 @@
-Arquivos .ZIP são da ferramente OverLeaf
+Arquivos .ZIP são da ferramenta OverLeaf
